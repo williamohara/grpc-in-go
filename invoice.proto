@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/353solutions/backoffice/pb";
+
+message Items {
+  string sku = 1;
+  int32 ammount = 2;
+  int32 price = 3;
+}
+
+message Invoice {
+  string id = 1;
+  google.protobuf.Timestamp time = 2;
+  string customer = 3;
+  repeated Items item = 4;
+}
